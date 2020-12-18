@@ -47,4 +47,24 @@ public class Sorts{
 
 	}
 
+	public static void selectionSort(int[] data) {
+
+		for (int run = 0; run < data.length; run++) {
+			int start = data[run];
+			int min = data[run];
+			int minIndex = run;
+
+			for (int index = run; index < data.length; index++) {
+				if (min > data[index]) {
+					min = data[index];
+					run = index;
+				}
+			}
+
+			data[run] = min;
+			data[minIndex] = start;
+		}
+
+	}
+
 }
