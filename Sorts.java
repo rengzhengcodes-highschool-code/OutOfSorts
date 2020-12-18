@@ -51,7 +51,7 @@ public class Sorts{
 
 		for (int run = 0; run < data.length; run++) {
 			dprint(Arrays.toString(data));
-			
+
 			int start = data[run];
 			int min = data[run];
 			int minIndex = run;
@@ -67,6 +67,26 @@ public class Sorts{
 			data[minIndex] = start;
 		}
 
+	}
+
+	public static void insertionSort(int[] data) {
+		for (int index = 1; index < data.length; index++) {
+			int insertionPosition = index - 1;
+
+			if (data[index] < data[insertionPosition]) {
+				while (data[index] < data[insertionPosition]) {
+					insertionPosition--;
+				}
+
+				int value = data[index];
+
+				for (int position = index-1; position >= insertionPosition; position--) {
+					data[index+1] = data[index];
+				}
+
+				data[insertionPosition] = value;
+			}
+		}
 	}
 
 }
