@@ -50,6 +50,8 @@ public class Sorts{
 	public static void selectionSort(int[] data) {
 
 		for (int run = 0; run < data.length; run++) {
+			dprint(Arrays.toString(data));
+			
 			int start = data[run];
 			int min = data[run];
 			int minIndex = run;
