@@ -2,13 +2,16 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class BubbleTester {
+	private static boolean DEBUG = false;
 
 	public static void main(String[] args) {
 
 		manualEvaluation();
 
 		boolean failure = false;
+		failure = seededRandomSort(10, 1000);
 
+		TesterMethods.overall(failure);
 	}
 
 	public static void manualEvaluation() {
@@ -57,5 +60,46 @@ public class BubbleTester {
 		}
 		System.out.println("expectedPrints EVALUATE YOURSELF");
 	}
-	
+
+	public static boolean seededRandomSort(int tests, int arrLen) {
+		TesterMethods.tester("seededRandomSort");
+		boolean fail = false;
+
+		for (int test = 0; test < tests; test++) {
+			Random rng = new Random(test);
+			int[] sort = new int[arrLen];
+			int[] expected = new int[arrLen];
+
+			for (int i = 0; i < arrLen; i++) {
+				int val = rng.nextInt(arrLen) - arrLen / 2;
+				sort[i] = val;
+				expected[i] = val;
+			}
+
+			if (DEBUG) {
+				System.out.println(Arrays.toString(sort));
+				System.out.println(Arrays.toString(expected));
+			}
+
+			Sorts.bubbleSort(sort);
+			Arrays.sort(expected);
+
+			if (DEBUG) {
+				System.out.println(Arrays.toString(sort));
+				System.out.println(Arrays.toString(expected));
+			}
+
+			if (Arrays.equals(sort, expected)) {
+				if (DEBUG) {
+					TesterMethods.passMessage(test);
+				}
+			} else {
+				fail = true;
+				TesterMethods.errorMessage(test, Arrays.toString(expected), Arrays.toString(sort));
+			}
+		}
+
+		TesterMethods.methodMessage("seededRandomSort", fail);
+		return fail;
+	}
 }
