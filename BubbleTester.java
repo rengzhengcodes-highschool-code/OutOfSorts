@@ -9,7 +9,10 @@ public class BubbleTester {
 		manualEvaluation();
 
 		boolean failure = false;
-		failure = seededRandomSort(10, 1000);
+		failure = seededRandomSort(1000, 1000);
+		failure = seededRandomSort(10, 1) || failure;
+		failure = seededRandomSort(10, 0) || failure;
+		failure = seededRandomSort(10, 2) || failure;
 
 		TesterMethods.overall(failure);
 	}
