@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Sorts{
 
-	public static boolean DEBUG = true;
+	public static boolean DEBUG = false;
 
   public static void dprint(String s){
     if(DEBUG){
@@ -31,7 +31,7 @@ public class Sorts{
 
 			boolean swapped = false;
 			for (int i = 0; i < (data.length - 1) - pass; i++) {
-				if (data[i] < data[i+1]) {
+				if (data[i] > data[i+1]) {
 					swapped = true;
 					int holder = data[i];
 					data[i] = data[i+1];

@@ -13,6 +13,7 @@ public class BubbleTester {
 
 	public static void manualEvaluation() {
 		TesterMethods.tester("expectedPrints EXPECTS YOU TO PRINT PER SORT CYCLE");
+		Sorts.main(new String[1]);
 
 		int[][] sorts = {
 			{5, 1, 12, -5, 16},
@@ -45,9 +46,10 @@ public class BubbleTester {
 		};
 
 		for (int test = 0; test < sorts.length; test++) {
-
+			System.out.println("bubblePrint");
 			Sorts.bubbleSort(sorts[test]);
 
+			System.out.println("expectedPrints");
 			for (int line = 0; line < expectedPrints[test].length; line++) {
 				System.out.println(Arrays.toString(expectedPrints[test][line]));
 			}
@@ -55,5 +57,5 @@ public class BubbleTester {
 		}
 		System.out.println("expectedPrints EVALUATE YOURSELF");
 	}
-
+	
 }
