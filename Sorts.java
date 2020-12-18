@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Sorts{
 
 	public static boolean DEBUG = true;
@@ -25,6 +27,8 @@ public class Sorts{
 
 		int pass = 0;
 		while (!sorted) {
+			dprint(Arrays.toString(data));
+
 			boolean swapped = false;
 			for (int i = 0; i < (data.length - 1) - pass; i++) {
 				if (data[i] < data[i+1]) {
@@ -42,5 +46,5 @@ public class Sorts{
 		}
 
 	}
-	
+
 }
