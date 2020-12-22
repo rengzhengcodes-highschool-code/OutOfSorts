@@ -71,15 +71,15 @@ public class Sorts{
 
 	public static void insertionSort(int[] data) {
 		for (int index = 1; index < data.length; index++) {
-			int insertionPosition = index;
+			int comparisonPosition = index-1;
 			int value = data[index];
 
-			while (data[insertionPosition-1] > value && insertionPosition > 1) {
-				data[insertionPosition] = data[insertionPosition-1];
-				insertionPosition--;
+			while (comparisonPosition >= 0 && data[comparisonPosition] > value) {
+				data[comparisonPosition+1] = data[comparisonPosition];//shifts previous position up if value is not supposed to go in this current position, as that means the value that was shifted to the previous value is larger than here so it must be inserted before this index.
+				comparisonPosition--;
 			}
 
-			data[insertionPosition] = value;
+			data[comparisonPosition+1] = value;//+1 necessary as insertion position overshoots where it's supposed to terminate due to the way it evaluates and shifts.
 
 			dprint(Arrays.toString(data));
 		}
