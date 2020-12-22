@@ -18,6 +18,8 @@ public class BubbleTester {
 	}
 
 	public static void manualEvaluation() {
+		TesterMethods.tester("manualEvaluation");
+
 		TesterMethods.tester("expectedPrints EXPECTS YOU TO PRINT PER SORT CYCLE");
 		Sorts.main(new String[1]);
 
@@ -25,7 +27,10 @@ public class BubbleTester {
 			{5, 1, 12, -5, 16},
 			{2, 3, 4, 5, 1},
 			{6, 1, 2, 3, 4, 5},
-			{1, 2, 3, 4, 5}
+			{1, 2, 3, 4, 5},
+			{},
+			{0},
+			{5, 4, 3, 2, 1},
 		};
 
 		int[][][] expectedPrints = {
@@ -48,6 +53,19 @@ public class BubbleTester {
 			},
 			{
 				{1, 2, 3, 4, 5},
+			},
+			{
+				{}
+			},
+			{
+				{0}
+			},
+			{
+				{5, 4, 3, 2, 1},
+				{4, 3, 2, 1, 5},
+				{3, 2, 1, 4, 5},
+				{2, 1, 3, 4, 5},
+				{1, 2, 3, 4, 5}
 			}
 		};
 
@@ -60,7 +78,13 @@ public class BubbleTester {
 				System.out.println(Arrays.toString(expectedPrints[test][line]));
 			}
 
+			if (Arrays.equals(expectedPrints[test][expectedPrints[test].length-1], sorts[test])) {
+				TesterMethods.passMessage(test);
+			} else {
+				TesterMethods.errorMessage(test, Arrays.toString(expectedPrints[test][expectedPrints[test].length-1]), Arrays.toString(sorts[test]));
+			}
 		}
+
 		System.out.println("expectedPrints EVALUATE YOURSELF");
 	}
 
