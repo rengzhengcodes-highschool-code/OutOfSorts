@@ -7,6 +7,8 @@ public class SelectionTester {
 	public static void main(String[] args) {
 		boolean failure = false;
 
+		manualEvaluation();
+
 		//failure = seededRandomSort(1000, 1000);
 		//failure = seededRandomSort(10, 1) || failure;
 		//failure = seededRandomSort(10, 0) || failure;
@@ -58,7 +60,7 @@ public class SelectionTester {
 		};
 
 		for (int test = 0; test < sorts.length; test++) {
-			System.out.println("insertionPrint");
+			System.out.println("selectionPrint");
 			Sorts.selectionSort(sorts[test]);
 
 			System.out.println("expectedPrints");

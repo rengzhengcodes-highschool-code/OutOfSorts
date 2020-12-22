@@ -2,10 +2,10 @@ import java.util.Arrays;
 
 public class Sorts{
 
-	public static boolean DEBUG = false;
+	public static boolean DEBUG = true;
 
   public static void dprint(String s){
-    if(DEBUG){
+    if(DEBUG) {
       System.out.println(s);
     }
   }
@@ -48,23 +48,20 @@ public class Sorts{
 	}
 
 	public static void selectionSort(int[] data) {
-
 		for (int run = 0; run < data.length; run++) {
 			dprint(Arrays.toString(data));
-
-			int start = data[run];
 			int min = data[run];
 			int minIndex = run;
 
-			for (int index = run; index < data.length; index++) {
-				if (min > data[index]) {
-					min = data[index];
-					run = index;
+			for (int comparison = run; comparison < data.length; comparison++) {
+				if (min > data[comparison]) {
+					min = data[comparison];
+					minIndex = comparison;
 				}
 			}
 
+			data[minIndex] = data[run];
 			data[run] = min;
-			data[minIndex] = start;
 		}
 
 	}
