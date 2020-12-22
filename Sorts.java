@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Sorts{
 
-	public static boolean DEBUG = false;
+	public static boolean DEBUG = true;
 
   public static void dprint(String s){
     if(DEBUG){
@@ -74,18 +74,20 @@ public class Sorts{
 			int insertionPosition = index - 1;
 
 			if (data[index] < data[insertionPosition]) {
-				while (data[index] < data[insertionPosition]) {
+				while (data[index] < data[insertionPosition] && insertionPosition > 0) {
 					insertionPosition--;
 				}
 
 				int value = data[index];
 
-				for (int position = index-1; position >= insertionPosition; position--) {
-					data[index+1] = data[index];
+				for (int position = index; position > insertionPosition; position--) {
+					data[index] = data[index-1];
 				}
 
 				data[insertionPosition] = value;
 			}
+
+			dprint(Arrays.toString(data));
 		}
 	}
 
