@@ -70,7 +70,10 @@ public class Sorts{
 	}
 
 	public static void insertionSort(int[] data) {
+		dprint(Arrays.toString(data));
+
 		for (int index = 1; index < data.length; index++) {
+
 			int comparisonPosition = index-1;
 			int value = data[index];
 
@@ -83,6 +86,7 @@ public class Sorts{
 
 			dprint(Arrays.toString(data));
 		}
-	}
 
+	}
+	
 }

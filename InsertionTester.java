@@ -35,6 +35,7 @@ public class InsertionTester {
 			{
 				{4, 3, 2, 10, 12, 1, 5, 6},
 				{3, 4, 2, 10, 12, 1, 5, 6},
+				{2, 3, 4, 10, 12, 1, 5, 6},//35d index compared is 4, which is why there's 3 lines o this and not 2.
 				{2, 3, 4, 10, 12, 1, 5, 6},
 				{2, 3, 4, 10, 12, 1, 5, 6},
 				{1, 2, 3, 4, 10, 12, 5, 6},
