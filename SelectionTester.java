@@ -7,12 +7,67 @@ public class SelectionTester {
 	public static void main(String[] args) {
 		boolean failure = false;
 
-		failure = seededRandomSort(1000, 1000);
-		failure = seededRandomSort(10, 1) || failure;
-		failure = seededRandomSort(10, 0) || failure;
-		failure = seededRandomSort(10, 2) || failure;
+		//failure = seededRandomSort(1000, 1000);
+		//failure = seededRandomSort(10, 1) || failure;
+		//failure = seededRandomSort(10, 0) || failure;
+		//failure = seededRandomSort(10, 2) || failure;
 
 		TesterMethods.overall(failure);
+	}
+
+	public static void manualEvaluation() {
+		TesterMethods.tester("expectedPrints EXPECTS YOU TO PRINT PER SORT CYCLE");
+		Sorts.main(new String[1]);
+
+		int[][] sorts = {
+			{64, 25, 12, 22, 11},
+			{2, 3, 4, 5, 1},
+			{6, 1, 2, 3, 4, 5},
+			{1, 2, 3, 4, 5},
+			{},
+			{0},
+			{5, 4, 3, 2, 1},
+		};
+
+		int[][][] expectedPrints = {
+			{
+				{64, 25, 12, 22, 11},
+				{11, 25, 12, 22, 64},
+				{11, 12, 25, 22, 64},
+				{11, 12, 22, 25, 64},
+				{11, 12, 22, 25, 64}
+			},
+			{
+				{}
+			},
+			{
+				{}
+			},
+			{
+				{}
+			},
+			{
+				{}
+			},
+			{
+				{}
+			},
+			{
+				{}
+			},
+		};
+
+		for (int test = 0; test < sorts.length; test++) {
+			System.out.println("insertionPrint");
+			Sorts.selectionSort(sorts[test]);
+
+			System.out.println("expectedPrints");
+			for (int line = 0; line < expectedPrints[test].length; line++) {
+				System.out.println(Arrays.toString(expectedPrints[test][line]));
+			}
+
+		}
+		System.out.println("expectedPrints EVALUATE YOURSELF");
 	}
 
 	public static boolean seededRandomSort(int tests, int arrLen) {
