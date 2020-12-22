@@ -71,21 +71,20 @@ public class Sorts{
 
 	public static void insertionSort(int[] data) {
 		for (int index = 1; index < data.length; index++) {
-			int insertionPosition = index - 1;
+			int insertionPosition = index;
 
-			if (data[index] < data[insertionPosition]) {
-				while (data[index] < data[insertionPosition] && insertionPosition > 0) {
-					insertionPosition--;
-				}
+			do {
+				insertionPosition--;
+				dprint(insertionPosition + "");
+			} while (data[index] < data[insertionPosition] && insertionPosition > 0);
 
-				int value = data[index];
+			int value = data[index];
 
-				for (int position = index; position > insertionPosition; position--) {
-					data[index] = data[index-1];
-				}
-
-				data[insertionPosition] = value;
+			for (int position = index; position > insertionPosition; position--) {
+				data[position] = data[position-1];
 			}
+
+			data[insertionPosition] = value;
 
 			dprint(Arrays.toString(data));
 		}
