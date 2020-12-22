@@ -9,10 +9,10 @@ public class SelectionTester {
 
 		manualEvaluation();
 
-		//failure = seededRandomSort(1000, 1000);
-		//failure = seededRandomSort(10, 1) || failure;
-		//failure = seededRandomSort(10, 0) || failure;
-		//failure = seededRandomSort(10, 2) || failure;
+		failure = seededRandomSort(1000, 1000);
+		failure = seededRandomSort(10, 1) || failure;
+		failure = seededRandomSort(10, 0) || failure;
+		failure = seededRandomSort(10, 2) || failure;
 
 		TesterMethods.overall(failure);
 	}
@@ -40,22 +40,39 @@ public class SelectionTester {
 				{11, 12, 22, 25, 64}
 			},
 			{
-				{}
+				{2, 3, 4, 5, 1},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
+			},
+			{
+				{6, 1, 2, 3, 4, 5},
+				{1, 6, 2, 3, 4, 5},
+				{1, 2, 6, 3, 4, 5},
+				{1, 2, 3, 6, 4, 5},
+				{1, 2, 3, 4, 6, 5},
+				{1, 2, 3, 4, 5, 6}
+			},
+			{
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5},
 			},
 			{
 				{}
 			},
 			{
-				{}
+				{0}
 			},
 			{
-				{}
-			},
-			{
-				{}
-			},
-			{
-				{}
+				{5, 4, 3, 2, 1},
+				{1, 4, 3, 2, 5},
+				{1, 2, 4, 3, 5},
+				{1, 2, 3, 4, 5},
+				{1, 2, 3, 4, 5}
 			},
 		};
 

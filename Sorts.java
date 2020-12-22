@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Sorts{
 
-	public static boolean DEBUG = true;
+	public static boolean DEBUG = false;
 
   public static void dprint(String s){
     if(DEBUG) {
