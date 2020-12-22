@@ -72,16 +72,11 @@ public class Sorts{
 	public static void insertionSort(int[] data) {
 		for (int index = 1; index < data.length; index++) {
 			int insertionPosition = index;
-
-			do {
-				insertionPosition--;
-				dprint(insertionPosition + "");
-			} while (data[index] < data[insertionPosition] && insertionPosition > 0);
-
 			int value = data[index];
 
-			for (int position = index; position > insertionPosition; position--) {
-				data[position] = data[position-1];
+			while (data[insertionPosition-1] > value && insertionPosition > 1) {
+				data[insertionPosition] = data[insertionPosition-1];
+				insertionPosition--;
 			}
 
 			data[insertionPosition] = value;
