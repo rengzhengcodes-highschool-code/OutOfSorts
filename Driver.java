@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 public class Driver{
   public static void main(String[]args) {
     if(args.length < 2){
@@ -12,13 +13,22 @@ public class Driver{
 
       //overhead: 1 random array generation.
       if(args.length < 3 || args[2].equals("random")) {
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+				Random rng = new Random(Integer.parseInt(args[0]));
+	      for (int num = 0; num < Integer.parseInt(args[0]); num++) {
+					randData[num] = rng.nextInt() - Integer.parseInt(args[0]) / 2;
+				}
       } else if(args[2].equals("equal")) {
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+				for (int num = 0; num < Integer.parseInt(args[0]); num++) {
+					randData[num] = 0;
+				}
       } else if(args[2].equals("sorted")) {
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+				for (int num = 0; num < Integer.parseInt(args[0]); num++) {
+					randData[num] = num;
+				}
       } else if(args[2].equals("reversed")) {
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+				for (int num = Integer.parseInt(args[0]); num > 0; num++) {
+					randData[num] = num;
+				}
       }
 
       if(args[1].equals("bubble")) {
